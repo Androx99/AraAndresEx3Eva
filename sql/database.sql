@@ -1,5 +1,5 @@
 CREATE TABLE AGENCIA(
-    Id_Agencia NUMBER(5),
+    Id_Agencia INTEGER(5),
     nombre VARCHAR2(50),
     pais VARCHAR2(50),
     AUTOR_EXAMEN VARCHAR(150),
@@ -10,15 +10,15 @@ CREATE TABLE AGENCIA(
 );
 
 CREATE TABLE SATELITE(
-    Id_Satelite NUMBER(5),
+    Id_Satelite INTEGER(5),
     nombre VARCHAR2(9),
     orbita VARCHAR2(15),
-    peso NUMBER(15),
-    coste NUMBER(15),
+    peso INTEGER(15),
+    coste INTEGER(15),
     activo BOOLEAN(15),
     AUTOR_EXAMEN VARCHAR(150),
-    Id_Agencia NUMBER(5),
-    Id_Detalle NUMBER(5),
+    Id_Agencia INTEGER(5),
+    Id_Detalle INTEGER(5),
     CONSTRAINT PK_SATELITE PRIMARY KEY (Id_Satelite),
     CONSTRAINT NN_SATELITE_NOMBRE CHECK (nombre IS NOT NULL),
     CONSTRAINT NN_SATELITE_ORBITA CHECK (orbita IS NOT NULL),
@@ -31,12 +31,12 @@ CREATE TABLE SATELITE(
 );
 
 CREATE TABLE DETALLESATELITE(
-    Id_DetalleSatelite NUMBER(5),
-    velocidadMaxima NUMBER(9),
-    combustible NUMBER(15),
-    vidaUtil NUMBER(15),
+    Id_DetalleSatelite INTEGER(5),
+    velocidadMaxima INTEGER(9),
+    combustible INTEGER(15),
+    vidaUtil INTEGER(15),
     AUTOR_EXAMEN VARCHAR(150),
-    Id_Satelite NUMBER(5),
+    Id_Satelite INTEGER(5),
     CONSTRAINT PK_DETALLESATELITE PRIMARY KEY (Id_DetalleSatelite),
     CONSTRAINT NN_DETALLESATELITE_VELOCIDADMAXIMA CHECK (velocidadMaxima IS NOT NULL),
     CONSTRAINT NN_DETALLESATELITE_COMBUSTIBLE CHECK (combustible IS NOT NULL),
