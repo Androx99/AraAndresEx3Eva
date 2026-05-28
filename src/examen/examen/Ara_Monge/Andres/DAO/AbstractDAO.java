@@ -1,6 +1,6 @@
-package examen.examen.Ara_Monge.Andres.DAO;
+package org.example.DAO;
 
-import examen.examen.Ara_Monge.Andres.beans.Satelite;
+import org.example.motores.MotorSQL;
 
 import java.util.ArrayList;
 
@@ -20,5 +20,4 @@ public abstract class AbstractDAO<T>
      */
     public abstract ArrayList<T> findByGenero(String genero);
     public abstract ArrayList<T> findByDirector(String director);
-    public abstract Pelicula findDetallePeliculaByPelicula(int idPelicula);
 }

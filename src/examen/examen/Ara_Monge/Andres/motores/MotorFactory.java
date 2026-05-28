@@ -1,4 +1,4 @@
-package org.example.DAO;
+package org.example.motores;
 
 public class MotorFactory {
     public static final String ORACLE = "ORACLE";
@@ -9,8 +9,6 @@ public class MotorFactory {
         switch (motor){
             case POSTGRE:
                 return new PostgreMotorSQL();
-            case MARIADB:
-                return new MariaDBMotorSQL();
             default:
                 throw new IllegalArgumentException(
                         "Motor no soportado");

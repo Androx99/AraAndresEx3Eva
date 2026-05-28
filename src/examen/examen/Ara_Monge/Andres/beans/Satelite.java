@@ -1,4 +1,4 @@
-package examen.examen.Ara_Monge.Andres.beans;
+package org.example.beans;
 
 public class Satelite {
     private int id;

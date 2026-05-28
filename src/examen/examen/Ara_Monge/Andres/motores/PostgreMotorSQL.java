@@ -1,10 +1,10 @@
-package org.example.DAO;
+package org.example.motores;
 
 import java.sql.DriverManager;
 
 public class PostgreMotorSQL extends MotorSQL {
     private static final String URL =
-            "jdbc:postgresql://database-2.cxhptkfuwfna.us-east-1.rds.amazonaws.com:5432/postgres";
+            "jdbc:postgresql://ara-andres-dam.c6v5cmlyzgqs.us-east-1.rds.amazonaws.com:5432/postgres";
     private static final String USER =
             "postgres";
     private static final String PASSWORD =

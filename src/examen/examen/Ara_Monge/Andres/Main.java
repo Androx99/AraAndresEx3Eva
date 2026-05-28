@@ -1,12 +1,10 @@
 package org.example;
 
 
-import org.example.DAO.ClienteDAOImpl;
-import org.example.DAO.MotorFactory;
-import org.example.beans.Cliente;
-
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Main {
     private static final String URL = "jdbc:postgresql://database-2.cxhptkfuwfna.us-east-1.rds.amazonaws.com:5432/postgres";
@@ -39,72 +37,5 @@ public class Main {
 
     }
     public static void main(String[] args) {
-        try {
-                initConexion();
-                ResultSet rs = ejecutarQuery(SQL_SELECT);
-
-                System.out.println("¡CONECTADO EXITOSAMENTE!");
-                ArrayList<Cliente> lstClientes =
-                        new ArrayList<>();
-
-                if(rs!=null) {
-                    while (rs.next()) {
-                        // SELECT * FROM CLIENTES
-                        // ID NOMBRE EMAIL DIA MES AÑYO
-                        Cliente cliente = new Cliente();
-                        cliente.setId(rs.getInt(1));
-                        cliente.setNombre(rs.getString(2));
-                        cliente.setEmail(rs.getString(3));
-                        cliente.setDia(rs.getString(4));
-                        cliente.setMes(rs.getString(5));
-                        cliente.setAnyo(rs.getString(6));
-                        lstClientes.add(cliente);
-
-
-/*
-                        System.out.println("Id"
-                                + rs.getInt(1));
-                        System.out.println("Nombre"
-                                + rs.getString(2));
-                        System.out.println("Email"
-                                + rs.getString(3));
-                        System.out.println("Día"
-                                + rs.getString(4));
-                        System.out.println("Mes"
-                                + rs.getString(5));
-                        System.out.println("Año"
-                                + rs.getString(6));
-                        // rs.getString(1)
-                        // rs.getString(2)
-                        // rs.getString(3)
-                        // rs.getString(4)
-                        // rs.getString(5)
-                        // rs.getString(6)
-*/
-                        System.out.println("RESULTADO DEL TEST (SELECT 1): " + rs.getInt(1));
-                    } // Aquí se cierran automáticamente rs, st y conn
-                    for (Cliente cliente: lstClientes
-                         ) {
-                        System.out.println(cliente.toString());
-                    }
-                }
-            System.out.println("CONEXIÓN CERRADA CORRECTAMENTE.");
-
-            System.out.println("\n=== DEMOSTRACION DE CLIENTE DAO EN MAIN ===");
-            ClienteDAOImpl clienteDAO = new ClienteDAOImpl(MotorFactory.create(MotorFactory.POSTGRE));
-            clienteDAO.check();
-
-            // Ejemplo de findAll() con el DAO
-            ArrayList<Cliente> clientesDAO = clienteDAO.findAll();
-            System.out.println("Clientes obtenidos con ClienteDAOImpl.findAll():");
-            for (Cliente c : clientesDAO) {
-                System.out.println("- " + c.getNombre() + " (" + c.getEmail() + ")");
-            }
-        } catch (SQLException e) {
-            System.err.println("ERROR DE SQL: " + e.getMessage());
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }

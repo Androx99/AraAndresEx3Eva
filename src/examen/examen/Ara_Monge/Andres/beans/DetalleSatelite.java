@@ -1,5 +1,4 @@
-package examen.examen.Ara_Monge.Andres.beans;
-
+package org.example.beans;
 
 public class DetalleSatelite {
     private int id;
@@ -45,6 +44,6 @@ public class DetalleSatelite {
     public void setSatelite(Satelite satelite) {
         this.satelite = satelite;
     }
-    
+
 }
 

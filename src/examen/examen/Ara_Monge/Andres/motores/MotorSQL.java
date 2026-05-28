@@ -1,16 +1,15 @@
-package org.example.DAO;
+package org.example.motores;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 
 public abstract class MotorSQL {
     protected String url;
     protected String user;
     protected String password;
     protected String driver;
-    protected Connection conn;
+    public Connection conn;
     protected PreparedStatement ps;
     public MotorSQL(
             String url,
