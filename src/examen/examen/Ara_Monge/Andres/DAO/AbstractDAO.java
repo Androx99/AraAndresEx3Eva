@@ -1,6 +1,6 @@
-package org.example.DAO;
+package examen.examen.Ara_Monge.Andres.DAO;
 
-import org.example.beans.Pelicula;
+import examen.examen.Ara_Monge.Andres.beans.Satelite;
 
 import java.util.ArrayList;
 

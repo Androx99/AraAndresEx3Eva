@@ -1,12 +1,12 @@
-package org.example.DAO;
+package examen.examen.Ara_Monge.Andres.DAO;
 
-import org.example.beans.Cliente;
-import org.example.beans.Pelicula;
+import examen.examen.Ara_Monge.Andres.beans.Agencia;
+import examen.examen.Ara_Monge.Andres.beans.Satelite;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-public class ClienteDAOImpl
+public class SateliteDAOImpl
         extends AbstractDAO<Cliente> {
 
     private static final String SQL_FIND_ALL =
